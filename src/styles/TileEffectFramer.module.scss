@@ -1,0 +1,58 @@
+.tiltContainer {
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	place-items: center;
+
+	background: hsl(224, 32%, 12%);
+	background-image: conic-gradient(
+		from 0deg at 50% 50%,
+		blue,
+		purple,
+		purple,
+		blue
+	);
+	background-blend-mode: multiply;
+	min-block-size: 100dvh;
+}
+
+.tilt {
+	padding: 5rem 3rem;
+	background-color: hsl(222, 45%, 7%);
+	display: inline-block;
+
+	font-size: 2rem;
+	font-family: sans-serif;
+	color: white;
+
+	border-radius: 1rem;
+	position: relative;
+}
+
+.tilt::before {
+	content: "";
+	inset: -1rem;
+	border-radius: inherit;
+
+	background: linear-gradient(
+		135deg,
+		rgb(171, 51, 250) 40%,
+		rgb(255, 45, 45) 100%
+	);
+	position: absolute;
+
+	transform: translateZ(-20px);
+}
+
+.tilt::after {
+	content: "";
+	inset: -0.5rem;
+	border-radius: inherit;
+	background-color: #000;
+	opacity: 0.3;
+	filter: blur(10px);
+
+	position: absolute;
+
+	transform: translateZ(-10px);
+}
